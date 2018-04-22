@@ -12,7 +12,7 @@ if (!defined('ABSPATH')) {
 // Create the Menu link
 
 function ctr_options_menu_link(){
-    add_menu_page( 'Google Reviews', 'Google Reviews', 'manage_options', 'ctr-options', 'ctr_options_content' );
+    add_menu_page( 'Google Reviews', 'Google Reviews', 'manage_options', 'ctr-options', 'ctr_options_content', 'dashicons-star-filled');
 }
 
 //Create Options page content
@@ -43,10 +43,47 @@ function ctr_options_content(){
 
                     <?php echo _e('Google Reviews Settings', 'coinso_total_reviews');?>
                 </th>
-
                 <tr>
                     <th scope="row">
-
+                        <label for="ctr_settings[business_name]">
+                            <?php _e('Add Business Name', 'coinso_total_reviews') ;?>
+                        </label>
+                    </th>
+                    <td>
+                        <input type="text" name="ctr_settings[business_name]" value="<?php echo $ctr_options['business_name'] ;?>" id="ctr_settings[business_name]" class="regular-text" placeholder="Best Locksmith Ever"/>
+                        <p class="description">
+                            <?php _e('Add Business Name', 'coinso_total_reviews');?>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        <label for="ctr_settings[service_type]">
+                            <?php _e('Add Type of service', 'coinso_total_reviews') ;?>
+                        </label>
+                    </th>
+                    <td>
+                        <input type="text" name="ctr_settings[service_type]" value="<?php echo $ctr_options['service_type'] ;?>" id="ctr_settings[service_type]" class="regular-text" placeholder="Towing & Roadside Assistance"/>
+                        <p class="description">
+                            <?php _e('Add the type of the main service (Locksmith / Towing & Roadside Assistance)', 'coinso_total_reviews');?>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        <label for="ctr_settings[service_provider]">
+                            <?php _e('Add type of service provider', 'coinso_total_reviews') ;?>
+                        </label>
+                    </th>
+                    <td>
+                        <input type="text" name="ctr_settings[service_provider]" value="<?php echo $ctr_options['service_provider'] ;?>" id="ctr_settings[service_provider]" class="regular-text" placeholder="AutomotiveBusiness"/>
+                        <p class="description">
+                            <?php _e('Add Type of service provider (Locksmith / LocalBusiness / AutomotiveBusiness', 'coinso_total_reviews');?>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">
                         <label for="ctr_settings[total_reviews]">
                             <?php _e('Add Total num of reviews', 'coinso_total_reviews') ;?>
                         </label>
@@ -61,19 +98,18 @@ function ctr_options_content(){
                 <tr>
                     <th scope="row">
                         <label for="ctr_settings[total_score]">
-                            <?php _e('Add Total Reviews Score', 'coinso_total_reviews') ;?>
+                            <?php _e('Add Total Reviews Stars', 'coinso_total_reviews') ;?>
                         </label>
                     </th>
                     <td>
-                        <input type="text" name="ctr_settings[total_score]" value="<?php echo $ctr_options['total_score'] ;?>" id="ctr_settings[total_score]" class="regular-text" placeholder="4.5"/>
+                        <input type="text" name="ctr_settings[total_score]" value="<?php echo (float) $ctr_options['total_score'] ;?>" id="ctr_settings[total_score]" class="regular-text" placeholder="4.5"/>
                         <p class="description">
-                            <?php _e('Add Total Reviews Score', 'coinso_total_reviews');?>
+                            <?php _e('Add Total Reviews Stars', 'coinso_total_reviews');?>
                         </p>
                     </td>
                 </tr>
                 <tr>
                     <th scope="row">
-
                         <label for="ctr_settings[reviews_url]">
                             <?php _e('Add Google review URL', 'coinso_total_reviews') ;?>
                         </label>
@@ -87,7 +123,19 @@ function ctr_options_content(){
                         </p>
                     </td>
                 </tr>
-
+                <tr>
+                    <th scope="row">
+                        <label for="ctr_settings[cta]">
+                            <?php _e('Add CTA to review link', 'coinso_total_reviews') ;?>
+                        </label>
+                    </th>
+                    <td>
+                        <input type="text" name="ctr_settings[cta]" value="<?php echo $ctr_options['cta'] ;?>" id="ctr_settings[cta]" class="regular-text" placeholder="Write a review"/>
+                        <p class="description">
+                            <?php _e('Add CTA to review link (Review Us)', 'coinso_total_reviews');?>
+                        </p>
+                    </td>
+                </tr>
                 </tbody>
 
             </table>

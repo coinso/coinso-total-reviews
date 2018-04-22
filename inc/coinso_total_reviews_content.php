@@ -8,22 +8,54 @@
 
 global $ctr_options, $reviews_atts;
     $reviews_atts = shortcode_atts( array(
+        'business_name'     =>  $ctr_options['business_name'] ? $ctr_options['business_name'] : '',
+        'service_type'      =>  $ctr_options['service_type'] ? $ctr_options['service_type'] : '',
+        'service_provider'  =>  $ctr_options['service_provider'] ? $ctr_options['service_provider'] : '',
         'total_reviews'     =>  $ctr_options['total_reviews'] ? $ctr_options['total_reviews'] : '',
         'total_score'       =>  $ctr_options['total_score'] ? $ctr_options['total_score'] : '',
         'reviews_url'       =>  $ctr_options['reviews_url'] ? $ctr_options['reviews_url'] : '',
+        'cta'               =>  $ctr_options['cta'] ? $ctr_options['cta'] : '',
     ), $args);
+    $stars_count = $reviews_atts['total_score'];
+    function is_decimal($val){
+
+        return is_numeric( $val ) && floor( $val ) != $val;
+    }
+
 ?>
-<div itemscope itemtype="http://schema.org/Service">
-    <meta itemprop="serviceType" content="Towing & Roadside Assistance" />
-    <span itemprop="provider" itemscope itemtype="http://schema.org/AutomotiveBusiness">
-        <span itemprop="name">Swift Towing</span>
-    </span>
-    <div itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
-        <span itemprop="ratingValue"><?php echo $reviews_atts['total_score'];?></span> stars -
-        <span itemprop="reviewCount"><?php echo $reviews_atts['total_reviews'];?></span> reviews
+<div class="ctr-reviews-wrap">
+    <div itemscope itemtype="http://schema.org/Service">
+        <meta itemprop="serviceType" content="<?php echo $reviews_atts['service_type'];?>" />
+        <span itemprop="provider" itemscope itemtype="http://schema.org/<?php echo $ctr_options['service_provider'];?>">
+            <span itemprop="name" class="ctr-name"><?php echo $ctr_options['business_name'];?></span>
+        </span>
+        <div itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating" class="ctr-total">
+            <span itemprop="ratingValue" class="ctr-total-score"><?php echo $reviews_atts['total_score'];?></span>
+            <?php if ($stars_count){ ?>
+                <ul class="ctr-stars-list">
+                    <?php
+                    if ( is_decimal($stars_count) ){
+
+                        for ($i = 1; $i <= ($stars_count); $i++){
+                            echo '<li class="ctr-star"><span class="dashicons dashicons-star-filled"></span></li>';
+                        }
+                        echo '<li class="ctr-star"><span class="dashicons dashicons-star-half"></span></li>';
+                    } else {
+
+                        for ($i = 1; $i <= $stars_count; $i++){
+                            echo '<li class="ctr-star"><span class="dashicons dashicons-star-filled"></span></li>';
+                        }
+                    }
+                    ?>
+                </ul>
+            <?php } ?>
+            <span itemprop="reviewCount" class="ctr-total-reviews"><?php echo $reviews_atts['total_reviews'] . ' reviews';?></span>
+        </div>
     </div>
-</div>
-<div class="review_us">
-    <a href="<?php echo $reviews_atts['reviews_url'];?>" target="_blank" rel="nofollow">Review Us</a>
+    <div class="review_us">
+        <a href="<?php echo $reviews_atts['reviews_url'];?>" target="_blank" rel="nofollow" class="ctr-btn">
+            <span class="dashicons dashicons-edit"></span>&nbsp;<?php echo $ctr_options['cta'];?>
+        </a>
+    </div>
 </div>
 

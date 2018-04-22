@@ -23,7 +23,8 @@ if (!defined('ABSPATH')) {
 $ctr_options = get_option('ctr_settings');
 
 
-//Load Content
+//Load scripts
+require_once ( plugin_dir_path(__FILE__) . '/inc/coinso_total_reviews_scripts_styles.php');
 
 
 //Load Settings only if on the admin side

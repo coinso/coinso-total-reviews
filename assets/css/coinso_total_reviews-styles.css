@@ -1,0 +1,57 @@
+.ctr-reviews-wrap{
+    display: block;
+}
+.ctr-reviews-wrap .ctr-name{
+    font-weight: 500;
+}
+.ctr-reviews-wrap .ctr-total{
+    display: flex;
+    align-items: center;
+}
+.ctr-reviews-wrap .ctr-total .ctr-stars-list{
+    list-style-type: none;
+    display: inline-block;
+}
+.ctr-reviews-wrap .ctr-total .ctr-stars-list .ctr-star{
+    display: inline-block;
+}
+.ctr-reviews-wrap .ctr-total .ctr-total-score{
+    color: #e7711b;
+    font-size:1.8em;
+    margin: 0 0.5em 0 0;
+}
+.ctr-reviews-wrap .ctr-total .ctr-stars-list .ctr-star{
+    margin: 0 1em 0 0;
+}
+.ctr-reviews-wrap .ctr-total .ctr-stars-list .ctr-star .dashicons{
+    color: #e7711b;
+    font-size: 2.5em;
+}
+.ctr-reviews-wrap .ctr-total .ctr-total-reviews{
+    margin-left: 1.2em;
+    color: #aaa;
+}
+.ctr-reviews-wrap .review_us{
+    margin-top: 15px;
+}
+.ctr-reviews-wrap .review_us .ctr-btn{
+    padding: 10px;
+    border: 1px solid #4d90fe;
+    box-shadow: none;
+    color: #fff;
+    background-color: #4d90fe;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+.ctr-reviews-wrap .review_us .ctr-btn:hover{
+    background-color: #1a0dab;
+    border-color: #1a0dab;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
