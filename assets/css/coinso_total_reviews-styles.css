@@ -1,5 +1,6 @@
 .ctr-reviews-wrap{
     display: block;
+    clear: both;
 }
 .ctr-reviews-wrap .ctr-name{
     font-weight: 500;

@@ -49,7 +49,10 @@ global $ctr_options, $reviews_atts;
                     ?>
                 </ul>
             <?php } ?>
-            <span itemprop="reviewCount" class="ctr-total-reviews"><?php echo $reviews_atts['total_reviews'] . ' reviews';?></span>
+            <span class="ctr-total-reviews">
+                <span itemprop="reviewCount"><?php echo $reviews_atts['total_reviews'];?></span> reviews
+            </span>
+
         </div>
     </div>
     <div class="review_us">
