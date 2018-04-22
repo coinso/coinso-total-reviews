@@ -9,10 +9,10 @@ The purpose of this plugin is to easily show the total numbers of reviews and av
 * Save page and see the changes on your site
 
 ## Settings
-On the plugin's settings page, set the values for the main google listing.
+On the plugin's settings page, set the values for the main google listing.<br/>
 You can add this shortcode in several pages and changing the values within the shortcode.
 
 ## Available parameters
-total_reviews = to set a new value of the total number of reviews
-total_score = to set a new value of the average score
-reviews_url = to set a new link to the listing's GMB page
+- total_reviews = to set a new value of the total number of reviews
+- total_score = to set a new value of the average score
+- reviews_url = to set a new link to the listing's GMB page
