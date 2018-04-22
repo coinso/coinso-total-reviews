@@ -35,13 +35,11 @@ global $ctr_options, $reviews_atts;
                 <ul class="ctr-stars-list">
                     <?php
                     if ( is_decimal($stars_count) ){
-
                         for ($i = 1; $i <= ($stars_count); $i++){
                             echo '<li class="ctr-star"><span class="dashicons dashicons-star-filled"></span></li>';
                         }
                         echo '<li class="ctr-star"><span class="dashicons dashicons-star-half"></span></li>';
                     } else {
-
                         for ($i = 1; $i <= $stars_count; $i++){
                             echo '<li class="ctr-star"><span class="dashicons dashicons-star-filled"></span></li>';
                         }
