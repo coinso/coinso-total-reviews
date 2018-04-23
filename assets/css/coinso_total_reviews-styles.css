@@ -27,7 +27,8 @@
 .ctr-reviews-wrap .ctr-total .ctr-stars-list .ctr-star{
     margin: 0 1em 0 0;
 }
-.ctr-reviews-wrap .ctr-total .ctr-stars-list .ctr-star .dashicons{
+.ctr-reviews-wrap .ctr-total .ctr-stars-list .ctr-star .dashicons,
+.ctr-reviews-wrap .ctr-total .ctr-stars-list .ctr-star .fas{
     color: #e7711b;
     font-size: 2.5em;
 }
@@ -60,11 +61,25 @@
     transition: all 0.2s ease-in-out;
 }
 @media screen and (max-width: 768px){
+    .ctr-reviews-wrap{
+        flex-direction: column;
+    }
+    .ctr-reviews-wrap .ctr-schema{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .ctr-reviews-wrap .ctr-total{
+        flex-direction: column;
+    }
     .ctr-reviews-wrap .ctr-total .ctr-stars-list{
         padding-left: 0;
+        display: flex;
+        flex-direction: row;
     }
     .ctr-reviews-wrap .ctr-total .ctr-total-score,
-    .ctr-reviews-wrap .ctr-total .ctr-stars-list .ctr-star .dashicons{
+    .ctr-reviews-wrap .ctr-total .ctr-stars-list .ctr-star .dashicons,
+    .ctr-reviews-wrap .ctr-total .ctr-stars-list .ctr-star .fas{
         font-size: 1.5em;
     }
     .ctr-reviews-wrap .ctr-total .ctr-stars-list .ctr-star {

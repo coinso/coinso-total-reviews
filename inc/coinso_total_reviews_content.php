@@ -24,7 +24,7 @@ global $ctr_options, $reviews_atts;
 
 ?>
 <div class="ctr-reviews-wrap">
-    <div itemscope itemtype="http://schema.org/Service">
+    <div itemscope itemtype="http://schema.org/Service" class="ctr-schema">
         <meta itemprop="serviceType" content="<?php echo $reviews_atts['service_type'];?>" />
         <span itemprop="provider" itemscope itemtype="http://schema.org/<?php echo $ctr_options['service_provider'];?>">
             <span itemprop="name" class="ctr-name"><?php echo $ctr_options['business_name'];?></span>
@@ -36,12 +36,27 @@ global $ctr_options, $reviews_atts;
                     <?php
                     if ( is_decimal($stars_count) ){
                         for ($i = 1; $i <= ($stars_count); $i++){
-                            echo '<li class="ctr-star"><span class="dashicons dashicons-star-filled"></span></li>';
+                            if ( !wp_is_mobile() ){
+
+                                echo '<li class="ctr-star"><span class="dashicons dashicons-star-filled"></span></li>';
+                            } else{
+                                echo '<li class="ctr-star"><i class="fas fa-star" aria-hidden="true"></i></li>';
+                            }
                         }
-                        echo '<li class="ctr-star"><span class="dashicons dashicons-star-half"></span></li>';
+                        if ( !wp_is_mobile() ){
+
+                            echo '<li class="ctr-star"><span class="dashicons dashicons-star-half"></span></li>';
+                        } else {
+                            echo '<li class="ctr-star"><i class="fas fa-star-half" aria-hidden="true"></i></li>';
+                        }
                     } else {
                         for ($i = 1; $i <= $stars_count; $i++){
-                            echo '<li class="ctr-star"><span class="dashicons dashicons-star-filled"></span></li>';
+                            if ( !wp_is_mobile() ){
+
+                                echo '<li class="ctr-star"><span class="dashicons dashicons-star-filled"></span></li>';
+                            } else{
+                                echo '<li class="ctr-star"><i class="fas fa-star" aria-hidden="true"></i></li>';
+                            }
                         }
                     }
                     ?>
