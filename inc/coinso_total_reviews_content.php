@@ -63,7 +63,7 @@ global $ctr_options, $reviews_atts;
                 </ul>
             <?php } ?>
             <span class="ctr-total-reviews">
-                <span itemprop="reviewCount"><?php echo $reviews_atts['total_reviews'];?></span> reviews
+                <span itemprop="reviewCount"><?php echo $reviews_atts['total_reviews'];?></span> google reviews
             </span>
 
         </div>
