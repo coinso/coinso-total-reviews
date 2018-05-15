@@ -2,16 +2,15 @@
 
 /*
 Plugin Name: Coinso Total Reviews
-Plugin URI: http://
+Plugin URI: https://github.com/coinso/coinso-total-reviews
 Description: Show Total Reviews on your website
 Author: Ido @ Coinso.com
-Author URI: https://coinso.com
-Version: 1.0
+Author URI: http://coinso.com/project/ido-barnea
+Version: 1.1
 Text Domain: coinso_toatal_reviews
-Version: 1.0
 License: GPL2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: https://github.com/barbareshet/plugin-path
+
 */
 
 if (!defined('ABSPATH')) {
@@ -65,3 +64,11 @@ function coinso_reviews_content($args, $content = null){
     require_once ( plugin_dir_path(__FILE__) . '/inc/coinso_total_reviews_content.php' );
     return ob_get_clean();
 }
+
+function plugin_add_settings_link( $links ) {
+    $settings_link = '<a href="'.admin_url('admin.php').'?page=ctr-options">' . __( 'Settings' ) . '</a>';
+    array_push( $links, $settings_link );
+    return $links;
+}
+$plugin = plugin_basename( __FILE__ );
+add_filter( "plugin_action_links_$plugin", 'plugin_add_settings_link' );

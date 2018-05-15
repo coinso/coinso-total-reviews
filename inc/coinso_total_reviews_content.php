@@ -36,27 +36,18 @@ global $ctr_options, $reviews_atts;
                     <?php
                     if ( is_decimal($stars_count) ){
                         for ($i = 1; $i <= ($stars_count); $i++){
-                            if ( !wp_is_mobile() ){
 
-                                echo '<li class="ctr-star"><span class="dashicons dashicons-star-filled"></span></li>';
-                            } else{
                                 echo '<li class="ctr-star"><i class="fas fa-star" aria-hidden="true"></i></li>';
-                            }
-                        }
-                        if ( !wp_is_mobile() ){
 
-                            echo '<li class="ctr-star"><span class="dashicons dashicons-star-half"></span></li>';
-                        } else {
-                            echo '<li class="ctr-star"><i class="fas fa-star-half" aria-hidden="true"></i></li>';
                         }
+
+                            echo '<li class="ctr-star"><i class="fas fa-star-half" aria-hidden="true"></i></li>';
+
                     } else {
                         for ($i = 1; $i <= $stars_count; $i++){
-                            if ( !wp_is_mobile() ){
 
-                                echo '<li class="ctr-star"><span class="dashicons dashicons-star-filled"></span></li>';
-                            } else{
                                 echo '<li class="ctr-star"><i class="fas fa-star" aria-hidden="true"></i></li>';
-                            }
+
                         }
                     }
                     ?>
@@ -70,7 +61,7 @@ global $ctr_options, $reviews_atts;
     </div>
     <div class="review_us">
         <a href="<?php echo $reviews_atts['reviews_url'];?>" target="_blank" rel="nofollow" class="ctr-btn">
-            <span class="dashicons dashicons-edit"></span>&nbsp;<?php echo $ctr_options['cta'];?>
+            <span class="fas fa-pencil-alt"></span>&nbsp;<?php echo $ctr_options['cta'];?>
         </a>
     </div>
 </div>
