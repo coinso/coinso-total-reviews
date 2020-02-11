@@ -30,6 +30,9 @@ global $ctr_options, $reviews_atts;
             <span itemprop="name" class="ctr-name"><?php echo $ctr_options['business_name'];?></span>
         </span>
         <div itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating" class="ctr-total">
+            <div itemprop="itemReviewed" itemscope itemtype="https://schema.org/<?php echo $reviews_atts['service_type'];?>">
+                <span itemprop="name"><?php echo $ctr_options['business_name'];?></span>
+            </div>
             <span itemprop="ratingValue" class="ctr-total-score"><?php echo $reviews_atts['total_score'];?></span>
             <?php if ($stars_count){ ?>
                 <ul class="ctr-stars-list">
